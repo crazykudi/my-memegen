@@ -12,7 +12,7 @@
 <body onload="onInit()">
     <header>
 
-        <section class="container header-wrapper flex align-center">
+        <section class="container flex align-center">
             <div class="logo flex-1">
                 memegen
             </div>
@@ -24,17 +24,11 @@
                     <li> <a href="#">|</a>
                     </li>
                     <li>
-                        <a href="#">About</a>
+                        <a href="#about">About</a>
                     </li>
                 </ul>
             </nav>
-
-            <!-- <button style="color:black" onclick="toggleView()">
-                <i class="fas fa-times"></i> Gallery
-            </button> -->
-
         </section>
-
     </header>
     <nav style="height: 80px" class="nav-container"></nav>
     <main>
@@ -65,42 +59,39 @@
             </section>
 
             <!-- About -->
-            <section class="about-container bg-light" id="about" style="padding: 0px;">
+            <section class="about-container" id="about" style="padding: 0px;">
                 <div class="row">
-                    <div class="col-sm-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="./imgs/Ohad.jpg" alt="">
-                            <h4>Ohad Horenstein</h4>
-                            <p class="text-muted">is a software developer @coding academy</p>
-                            <ul class="list-inline social-buttons">
-                                <li class="list-inline-item">
-                                    <a href="https://twitter.com/ohadhorenstein">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="https://www.facebook.com/ohad.horenstein">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="https://www.linkedin.com/in/ohad-horenstein-02347024">
-                                        <i class="fa fa-linkedin"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                    <div>
+                        <img class="rounded-circle" src="./imgs/Ohad.jpg" alt="">
+                    </div>
+                    <div class="my-info">
+                        <h3 class="social-nav" style=" margin: 5px auto">Ohad Horenstein</h3>
+                        <p class="about-details social-nav">
+                            is a business acumen specializing in corporate innovation.
+                            </br> Formerly Director of Innovation at Rakuten Viber.
+                        </p>
+
+                        <div class="social-nav clean-list">
+                            <a class="social-nav" href="https://www.facebook.com/ohad.horenstein"><img
+                                    src="./ICONS/facebook-logo.png"> </a>
+                            <a class="social-nav" href="https://www.linkedin.com/in/ohad-horenstein-02347024"><img
+                                    src="./ICONS/linkedin-logo.png"> </a>
+                            <a class="social-nav" href="https://crazykudi.github.io/my-memegen/"><img
+                                    src="./ICONS/github-logo.png"> </a>
                         </div>
                     </div>
             </section>
+
+
 
             <section class="contact">
 
             </section>
         </div>
     </main>
-
-    <footer>
-        <div class="container footer">
+    
+    <footer class="container">
+        <div>
             <h1>memegen</h1>
             <p>all rights reserved 2020</p>
         </div>

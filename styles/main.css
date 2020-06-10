@@ -45,18 +45,10 @@ button {
 /* LAYOUT */
 
 .container {
-    /* max-width: 1060px;
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    .container { */
-        
-        max-width: 980px;
-        margin: 0 auto; 
+    margin: 0 auto; 
 }
 
 main {
-    /* helper for footer */
     min-height: calc(100vh - 70px);
 }
 
@@ -73,25 +65,25 @@ header .logo {
     text-align: left;
 }
 
+section.container.flex.align-center {
+    margin: 0 25px;
+    margin: 0 auto;
+}
+    
+
 .main-menu a {
-    /* margin: 0 auto; */
-    /* display: block; */
-    /* text-align: center; */
     color: #fff;
-    /* align-items: center; */
-    /* width: 70px; */
+    padding-right: 5px;
+}
+
+
+.main-menu a:first-child:hover {
+    color: black;
 }
 
 a {
     margin: 5px;
 }
-/* .main-menu a {
-    border-left: 1px solid white; 
-} */
-
-/* .main-menu a:last-child {
-border-right: 1px solid white; 
-} */
 
 /********* MAIN *********/
 
@@ -100,20 +92,17 @@ border-right: 1px solid white;
 .grid-container {
     display: grid;
     background-color: #e3e3e3;
-    /* grid-template-columns - responsive without mediaqueries.
-    200px is the minimum img size.
-    each column is 200px minimum (one pic fit)  will grow to 1fr until screen width size is 400px - then two imgs can fit each 200px size. next breakpoint is 600px - 3 columns can fit. 
-    */
+  
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    /* rows - undefiend, automatically make rows as needed. with auto height-the height of the img in that row.*/
+  
     grid-gap: 10px;
     padding: 10px;
 }
 
 .grid-container>img {
-    /* display:block - img is inline by default- makes it have "line-height" applied to the bottom. display block gets rid of that line */
+  
     display: block;
-    /* width: 100% - img in grid cell will grow width to fit into changing cell size */
+  
     width: 100%;
     cursor: pointer;
     border-radius: 2px;
@@ -122,7 +111,7 @@ border-right: 1px solid white;
 
 .grid-container>img:hover {
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
-    /* box-shadow: 0 0 10px 6px rgba(0, 140, 186, 0.5); */
+ 
 }
 
 
@@ -142,12 +131,6 @@ border-right: 1px solid white;
 .meme-container > button {
     margin: 5px;
     z-index: 1;
-    /* height: 40px; */
-
-        /* width: 41px;
-        height: 41px;
-        border-radius: 12px;
-        background-color: var(--white); */
 
 }
 
@@ -193,28 +176,91 @@ margin: 0   auto;
 
 .rounded-circle {
     border-radius: 50%;
+    margin-left: 10px;
 }
 
-/* 
-#dl {
-    margin:5px;
+.about-details{
+    font-size: 1rem;
+}
+
+h3 {
+    color: #ff7f00;   
+}
+
+.row {
+    display: flex;
+    height: 250px;
+    justify-content: center;
+}
+
+.my-info{
+    margin: 30px;
+}
+
+div.row {
+    align-items: center;
+}
+
+/* social-nav */
+
+.clean-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.social-nav a {
+    display: inline-flex;
+    cursor: pointer;
+    background-color: white;
+    color: #ffffff;
+    border-radius: 12%;
+    border: 2px black solid;
+    transition: background-color .6s;
+    width: 25px;
+    height: 25px;
+    justify-content: center;
+}
+
+div.social-nav.clean-list {
+    justify-content: center;
+    margin-top: 5px;
+}
+a > img{
+    width: 15px;
+    height: 15px;
+    margin-top: 3px;
+}
+
+/* .social-nav{
+    display: flex;
+    justify-content: center;
 } */
+
+.social-nav a:hover{
+    background-color: #ff7f00;
+}
 
 
 /* FOOTER */
 
 footer {
-    height: 200px;
+    height: 100px;
     background-color: #ff7f00;
     color: white;
 }
 
-.container.footer{
-    justify-content: center;
+footer.container{
     display: flex;
-    flex-direction: column;
-    max-width: 1200px;
-    margin: 0 auto; 
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+ 
+}
+
+footer.logo {
+    color: rgb(248, 247, 247);
+   
 }
 
 /* HELPERS */
@@ -240,6 +286,8 @@ footer {
 .hidden {
     display: none;
 }
+
+
 
 
 /* Flex */
