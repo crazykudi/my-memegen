@@ -1,0 +1,281 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #292828;
+    font-size: 14px;
+    background-color: white;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+p{
+    margin: 0 auto;
+}
+
+h1 {
+    margin: 0 auto;
+}
+
+button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: white;
+    border: none;
+    color: #FFFFFF;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1em;
+    padding: 5px;
+    transition: all 0.3s;
+    cursor: pointer;
+    border-radius: 12px;
+    width: 60px;
+    height: 60px;
+}
+
+/* LAYOUT */
+
+.container {
+    /* max-width: 1060px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    .container { */
+        
+        max-width: 980px;
+        margin: 0 auto; 
+}
+
+main {
+    /* helper for footer */
+    min-height: calc(100vh - 70px);
+}
+
+/* HEADER */
+
+header {
+    background-color:#ff7f00;   
+}
+header .logo {
+    color: rgb(248, 247, 247);
+    font-size: 2.5rem;
+    margin: 10px;
+    font-family: impact; 
+    text-align: left;
+}
+
+.main-menu a {
+    /* margin: 0 auto; */
+    /* display: block; */
+    /* text-align: center; */
+    color: #fff;
+    /* align-items: center; */
+    /* width: 70px; */
+}
+
+a {
+    margin: 5px;
+}
+/* .main-menu a {
+    border-left: 1px solid white; 
+} */
+
+/* .main-menu a:last-child {
+border-right: 1px solid white; 
+} */
+
+/********* MAIN *********/
+
+/* GALLERY */
+
+.grid-container {
+    display: grid;
+    background-color: #e3e3e3;
+    /* grid-template-columns - responsive without mediaqueries.
+    200px is the minimum img size.
+    each column is 200px minimum (one pic fit)  will grow to 1fr until screen width size is 400px - then two imgs can fit each 200px size. next breakpoint is 600px - 3 columns can fit. 
+    */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* rows - undefiend, automatically make rows as needed. with auto height-the height of the img in that row.*/
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.grid-container>img {
+    /* display:block - img is inline by default- makes it have "line-height" applied to the bottom. display block gets rid of that line */
+    display: block;
+    /* width: 100% - img in grid cell will grow width to fit into changing cell size */
+    width: 100%;
+    cursor: pointer;
+    border-radius: 2px;
+
+}
+
+.grid-container>img:hover {
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    /* box-shadow: 0 0 10px 6px rgba(0, 140, 186, 0.5); */
+}
+
+
+/* MEME-CONTAINER */
+
+.meme-container {
+    display: flex;
+   flex-direction: column;
+    margin: 5px 0;
+}
+
+.meme-control {
+    display: flex;
+   flex-direction: column;
+} 
+
+.meme-container > button {
+    margin: 5px;
+    z-index: 1;
+    /* height: 40px; */
+
+        /* width: 41px;
+        height: 41px;
+        border-radius: 12px;
+        background-color: var(--white); */
+
+}
+
+.txt-editor {
+    padding: 5px 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin: 5px;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.memeCanvas {
+    border: 2px solid white;
+    border-radius: 2px;
+    margin: 5px;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+input[type=text] {
+    border: 2px solid white;
+    font-size: 1.8rem;
+    width: 370px;
+    height: 60px;
+    border-radius: 12px;
+}
+
+input[type=number] {
+    width: 45px;
+}
+
+.icon-bg{
+
+    width: 35px;
+    height: 40px;
+}
+
+/* about-container */
+
+.about-container{
+background-color: white;
+margin: 0   auto;
+}
+
+.rounded-circle {
+    border-radius: 50%;
+}
+
+/* 
+#dl {
+    margin:5px;
+} */
+
+
+/* FOOTER */
+
+footer {
+    height: 200px;
+    background-color: #ff7f00;
+    color: white;
+}
+
+.container.footer{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+/* HELPERS */
+
+.vertical-center-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clean-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.clean-btn {
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* Flex */
+
+.flex {
+    display: flex;
+}
+
+.flex-1{
+    flex:1;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-full {
+    flex: 1;
+}
