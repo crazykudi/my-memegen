@@ -16,10 +16,10 @@ function _createTxt(line, x, y) {
         line: line,
         size: 40,
         align: 'left',
-        color: '#000000', 
+        color: '#000000',
         fontFamily: 'Impact',
         isOutline: true,
-        lineWidth: 2, 
+        lineWidth: 2,
         strokeStyle: '#ffffff',
         isShadow: false,
         shadowColor: '#000000',
@@ -95,8 +95,10 @@ function addTxtOutline(txt) {
     gCtx.strokeText(txt.line, txt.x, txt.y);
 }
 
-function editTxt(elinput, txtIdx) {
-    var property = elinput.dataset.property;  
+function editTxt(elinput, txtIdx, diff) {
+    // debugger;
+    var property = elinput.dataset.property;
+    console.log(elinput.type);
     var value;
 
     switch (elinput.type) {
@@ -106,7 +108,15 @@ function editTxt(elinput, txtIdx) {
         case 'checkbox':
             value = elinput.checked;
             break;
-        default: 
+        case 'submit':
+            if (property === 'align') {
+                value = elinput.value;
+            }
+            else {
+                value = gMeme.txts[txtIdx][property] + diff;
+            }
+            break;
+        default:
             value = elinput.value;
             break;
     }
@@ -115,27 +125,28 @@ function editTxt(elinput, txtIdx) {
     drawCanvas();
 }
 
-function newTxtBtnClicked() {
-    gMeme.txts.push(_createTxt('New Line', 150, 150));
+function onNewTxtBtnClicked() {
+    gMeme.txts.push(_createTxt('Type here ...   ', 150, 150));
     drawCanvas();
     renderTxtsEditor();
 }
 
 function deleteTxt(txtIdx) {
-    gMeme.txts.splice(txtIdx, 1); 
+    gMeme.txts.splice(txtIdx, 1);
     drawCanvas();
     renderTxtsEditor();
 }
 
-// function dlCanvas(eldllink) {
-//     var canvas = document.querySelector('.memeCanvas');
+function onDownloadMeme(eldllink) {
+    var canvas = document.querySelector('.memeCanvas');
 
-//     var dt = canvas.toDataURL('image/png');
-//     dt = dt.replace(/^data:image\/[^;]*/, 'data:application/octet-stream');
-//     dt = dt.replace(/^data:application\/octet-stream/, 'data:application/octet-stream;headers=Content-Disposition%3A%20attachment%3B%20filename=canvas.png');
+    var dt = canvas.toDataURL('image/png');
+    dt = dt.replace(/^data:image\/[^;]*/, 'data:application/octet-stream');
+    dt = dt.replace(/^data:application\/octet-stream/, 'data:application/octet-stream;headers=Content-Disposition%3A%20attachment%3B%20filename=canvas.png');
+    eldllink.href = dt;
+    elLink.download = 'my_new_meme.png';
 
-//     eldllink.href = dt;
-// }
+}
 
 function toggleView() {
     document.querySelector('.meme-container').classList.toggle('hidden');
